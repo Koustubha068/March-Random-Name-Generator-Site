@@ -8,6 +8,27 @@ function addName () {
     displayNames()//call the displayNames function to update the list
 
     nameInput.value = '' //removes the name from the input box after the name  is submitted for the user
-    
+
     //later (enhancement) write javascript code to not allow the user to submit the input box with no name
 }
+
+function diplayNames() {
+ const nameList =document.getElementById('nameList')
+ nameList.innerHTML = ''//clears out previous list items
+
+for (let i = 0; i < namesArray.length; i++){ //i stands for increment/index. Repeating this process until i < the namesArry length
+    const name = namesArray[i]
+    const li = document.createElement('li') // tells HTML to make a div with id of li and calls it in a variable
+    li.className ='list-group-item'
+    const span =document.createElement('span')
+    span.textContent = name
+
+    li.appendChild(span)
+    nameList.appendChild(li)
+
+
+} 
+
+
+}
+document.getElementById('addNameBtn').addEventListener('click', addName)
