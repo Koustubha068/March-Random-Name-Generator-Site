@@ -1,34 +1,56 @@
-//Create an array to store names
 const namesArray = []
 
-function addName () {
-    const nameInput = document.getElementById('nameInput') //this stores input element (not the name just element) as a variable using document.getElementById
-    const name = nameInput.value.trim()//trim removes any characters in the begginning and end. Gets trimmed value of the input box and stores in the variable name
-    namesArray.push(name) //in the namesArry, add to the end (what push does) the name
-    displayNames()//call the displayNames function to update the list
+function addName() {
+    const nameInput = document.getElementById('nameInput') //storing name input element as a var
+    const name = nameInput.value.trim() //get the TRIMMED value of the input box and store in a var
 
-    nameInput.value = '' //removes the name from the input box after the name  is submitted for the user
+    namesArray.push(name)//add the name to the end of the array
+    displayNames() // Call the displayNames function to update the list
 
-    //later (enhancement) write javascript code to not allow the user to submit the input box with no name
-}
-
-function diplayNames() {
- const nameList =document.getElementById('nameList')
- nameList.innerHTML = ''//clears out previous list items
-
-for (let i = 0; i < namesArray.length; i++){ //i stands for increment/index. Repeating this process until i < the namesArry length
-    const name = namesArray[i]
-    const li = document.createElement('li') // tells HTML to make a div with id of li and calls it in a variable
-    li.className ='list-group-item'
-    const span =document.createElement('span')
-    span.textContent = name
-
-    li.appendChild(span)
-    nameList.appendChild(li)
-
-
-} 
-
+    nameInput.value = '' // Clear the input field after adding the name
 
 }
-document.getElementById('addNameBtn').addEventListener('click', addName)
+
+function displayNames() {
+    const nameList = document.getElementById('nameList')
+    nameList.innerHTML = ''// clear out previous list items
+
+    for (let i = 0; i < namesArray.length; i++) {
+        const name = namesArray[i]
+
+        const li = document.createElement('li')
+
+        li.classname = 'list-group-item'
+        const span = document.createElement('span')
+        span.textContent = name
+
+
+        li.appendChild(span)
+        nameList.appendChild(li)
+    }
+
+
+}
+function pickRandomName (){
+    const randomNameDiv = document.getElementById('randomName')
+    randomNameDiv.textContent = ''
+    //generate and select random name from the namesarray
+    const randomNumber = Math.floor(Math.random() * namesArray.length)
+    const randomName = namesArray[randomNumber]
+    randomNameDiv.textContent = randomName
+    namesArray.splice(randomNumber, 1)
+    displayNames()
+}
+
+//Event Listener for the button click to add a name
+document.getElementById('addNameBtn').addEventListener('click',addName)
+
+
+//Event Listener for the button click to select and display a name
+document.getElementById('pickRandomBtn').addEventListener('click', pickRandomName)
+
+
+
+
+
+
