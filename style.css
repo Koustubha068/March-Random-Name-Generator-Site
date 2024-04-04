@@ -4,19 +4,20 @@
 label{
     font-size: 2rem;
 }
-#addNameBtn{
-    margin-top:5%;
 
-}
 h1{
     text-align:center;
 }
 #addNameBtn{
     font-size:2rem;
+    margin-top:5%;
 }
-#addNameBtn{
+
+#pickRandomBtn{
     font-size:2rem;
 }
-#pickRandomBtn{
+#nameInput{
+    width:40rem;
+    height:5rem;
     font-size:2rem;
 }
