@@ -12,41 +12,26 @@
 </head>
 
 <body>
-    <header class="text-center p-2">
-        <h1 class="header bg-primary">Lucky Me Lottery</h1>
-    </header>
-    <h1 class="rules"> To use this, please type several names. One of the names will then be randomly picked.
-    </h1>
-    <div class="container p-3">
+    <div class="container">
         <div class="row">
-
-            <h1 class="text-center"> Enter the name here:</h1>
-            <input id="nameInput" class="col-5">
-
-            <button class="col-5 m-5 bg-primary" id="addNameBtn" type="button" class="btn btn-dark">Submit</button>
+            <div class="col-md-6 offset-md-3">
+                <h1> Random Name Generator </h1>
+                <div class="createGroup">
+                    <label>Enter Name:</label>
+                    <input type="text" class="form-control" id="nameInput">
+                  </div>
+                  <!--Add Name Button-->
+                  <button id="addNameBtn" type="button" class="col-12 btn btn-dark">Submit</button>
+                  <div id="nameList"></div>
+                  <div class="row p-3">
+                    <button type="button" id ="pickRandomBtn" class="btn btn-dark"> Random Name </button>
+                </div>
+                <div id="randomName"></div>
+            </div>
+            
+            
         </div>
-        <div class="row p-3">
-            <button type="button" id= "pickRandomBtn" class="btn btn-primary "> Random Name </button>
-        </div>
-        <div class="row p-3 bg-primary" id="div">
-          <ul id="nameList" class="list-group"><br></ul> 
-        </div>
-        <div id="randomName" class="mt-3-text-center"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

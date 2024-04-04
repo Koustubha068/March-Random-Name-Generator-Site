@@ -8,8 +8,13 @@ function addName() {
     displayNames() // Call the displayNames function to update the list
 
     nameInput.value = '' // Clear the input field after adding the name
+    if (nameInput.value === ''){
+        alert('Please add name')
+        return
+    }
 
 }
+
 
 function displayNames() {
     const nameList = document.getElementById('nameList')
